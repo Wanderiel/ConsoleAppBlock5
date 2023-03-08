@@ -11,7 +11,7 @@ namespace ConsoleAppB3P4
 
             string userInput;
 
-            List<int> numbers = new List<int>();
+            List<int> numbers = new();
 
             bool isWorking = true;
 
@@ -30,10 +30,7 @@ namespace ConsoleAppB3P4
                         break;
 
                     case CodeWordCommand:
-                        int sum = 0;
-
-                        foreach (int value in numbers)
-                            sum += value;
+                        int sum = GetSum(numbers);
 
                         Console.WriteLine($"\nСумма всех введённых чисел: {sum}");
                         isWorking = false;
@@ -48,6 +45,16 @@ namespace ConsoleAppB3P4
 
             Console.WriteLine("\nВсего доброго!");
             Console.ReadKey();
+        }
+
+        private static int GetSum(List<int> numbers)
+        {
+            int sum = 0;
+
+            foreach (int value in numbers)
+                sum += value;
+
+            return sum;
         }
     }
 }
