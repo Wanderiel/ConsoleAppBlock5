@@ -28,7 +28,7 @@ namespace ConsoleAppB5P5
 
             Random random = new Random();
 
-            int maxRandom = 100;
+            int maxRandom = 10;
 
             for (int i = 0; i < array.Length; i++)
                 array[i] = random.Next(maxRandom).ToString();
