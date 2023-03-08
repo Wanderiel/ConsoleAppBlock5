@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppB5P2", "ConsoleAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppB5P3", "ConsoleAppB5P3\ConsoleAppB5P3.csproj", "{B5ABF02F-D5FF-4778-ACA5-D7409A80B3AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppB5P4", "ConsoleAppB5P4\ConsoleAppB5P4.csproj", "{C95A5136-98D9-4AAE-9DD2-A7096EA9D854}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{CF7E97B2-CDE4-4E9A-B7AB-C3982FE71648}"
+	ProjectSection(SolutionItems) = preProject
+		challenge.txt = challenge.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{B5ABF02F-D5FF-4778-ACA5-D7409A80B3AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5ABF02F-D5FF-4778-ACA5-D7409A80B3AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5ABF02F-D5FF-4778-ACA5-D7409A80B3AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C95A5136-98D9-4AAE-9DD2-A7096EA9D854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C95A5136-98D9-4AAE-9DD2-A7096EA9D854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C95A5136-98D9-4AAE-9DD2-A7096EA9D854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C95A5136-98D9-4AAE-9DD2-A7096EA9D854}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
