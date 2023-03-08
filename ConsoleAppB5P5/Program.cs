@@ -11,7 +11,7 @@ namespace ConsoleAppB5P5
             string[] numbersFirst = GetFillArray(size);
             string[] numbersSecond = GetFillArray(size);
 
-            HashSet<string> hashSet = GetArrayNoRepetitions(numbersFirst, numbersSecond);
+            HashSet<string> hashSet = GetFillHashSet(numbersFirst, numbersSecond);
 
             Console.WriteLine("Даны массивы: ");
             Print(numbersFirst);
@@ -52,7 +52,7 @@ namespace ConsoleAppB5P5
             Console.WriteLine();
         }
 
-        private static HashSet<string> GetArrayNoRepetitions(string[] firstArray, string[] secondArray)
+        private static HashSet<string> GetFillHashSet(string[] firstArray, string[] secondArray)
         {
             HashSet<string> hashSet = new HashSet<string>();
 
