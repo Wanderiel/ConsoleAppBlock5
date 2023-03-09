@@ -8,27 +8,26 @@ namespace ConsoleAppB5P2
         {
             int size = 9;
 
-            Queue<int> purchases = new();
-
-            FillQueue(purchases, size);
-
-            ServePurchase(purchases);
+            Queue<int> purchases = CreateRandomPurchases(size);
+            ServePurchases(purchases);
 
             Console.ReadKey();
         }
 
-        private static void FillQueue(Queue<int> purchases, int size)
+        private static Queue<int> CreateRandomPurchases(int size)
         {
+            Queue<int> purchases = new Queue<int>();
             Random random = new Random();
-
             int minRandom = 1;
             int maxRandom = 1001;
 
             for (int i = 0; i < size; i++)
                 purchases.Enqueue(random.Next(minRandom, maxRandom));
+
+            return purchases;
         }
 
-        private static void ServePurchase(Queue<int> purchases)
+        private static void ServePurchases(Queue<int> purchases)
         {
             int sum = 0;
 
