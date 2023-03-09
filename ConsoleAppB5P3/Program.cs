@@ -13,12 +13,12 @@ namespace ConsoleAppB3P4
 
             List<int> numbers = new();
 
-            bool isWorking = true;
+            bool isStopped = false;
 
             Console.WriteLine($"Вводите любые числа." +
                 $"\nДля подсчёта суммы введите - {SumCommand}, для выхода - {ExitCommand}.");
 
-            while (isWorking)
+            while (isStopped == false)
             {
                 Console.Write("Введите число: ");
                 userInput = Console.ReadLine().ToLower();
@@ -26,23 +26,28 @@ namespace ConsoleAppB3P4
                 switch (userInput)
                 {
                     case ExitCommand:
-                        isWorking = false;
+                        isStopped = true;
                         break;
 
                     case SumCommand:
-                        PrintSum(numbers);
-                        isWorking = false;
+                        isStopped = FinishJob(numbers);
                         break;
 
                     default:
-                        if (int.TryParse(userInput, out int number))
-                            numbers.Add(number);
+                        AddNumber(numbers, userInput);
                         break;
                 }
             }
 
             Console.WriteLine("\nВсего доброго!");
             Console.ReadKey();
+        }
+
+        private static bool FinishJob(List<int> numbers)
+        {
+            PrintSum(numbers);
+
+            return true;
         }
 
         private static int PrintSum(List<int> numbers)
@@ -55,6 +60,12 @@ namespace ConsoleAppB3P4
             Console.WriteLine($"\nСумма всех введённых чисел: {sum}");
 
             return sum;
+        }
+
+        private static void AddNumber(List<int> numbers, string userInput)
+        {
+            if (int.TryParse(userInput, out int number))
+                numbers.Add(number);
         }
     }
 }
