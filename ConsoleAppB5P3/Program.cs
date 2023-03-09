@@ -7,7 +7,7 @@ namespace ConsoleAppB3P4
         static void Main(string[] args)
         {
             const string ExitCommand = "exit";
-            const string CodeWordCommand = "sum";
+            const string SumCommand = "sum";
 
             string userInput;
 
@@ -16,7 +16,7 @@ namespace ConsoleAppB3P4
             bool isWorking = true;
 
             Console.WriteLine($"Вводите любые числа." +
-                $"\nДля подсчёта суммы введите - {CodeWordCommand}, для выхода - {ExitCommand}.");
+                $"\nДля подсчёта суммы введите - {SumCommand}, для выхода - {ExitCommand}.");
 
             while (isWorking)
             {
@@ -29,10 +29,8 @@ namespace ConsoleAppB3P4
                         isWorking = false;
                         break;
 
-                    case CodeWordCommand:
-                        int sum = GetSum(numbers);
-
-                        Console.WriteLine($"\nСумма всех введённых чисел: {sum}");
+                    case SumCommand:
+                        PrintSum(numbers);
                         isWorking = false;
                         break;
 
@@ -47,12 +45,14 @@ namespace ConsoleAppB3P4
             Console.ReadKey();
         }
 
-        private static int GetSum(List<int> numbers)
+        private static int PrintSum(List<int> numbers)
         {
             int sum = 0;
 
             foreach (int value in numbers)
                 sum += value;
+
+            Console.WriteLine($"\nСумма всех введённых чисел: {sum}");
 
             return sum;
         }
