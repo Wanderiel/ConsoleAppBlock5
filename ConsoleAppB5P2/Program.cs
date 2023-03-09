@@ -12,7 +12,7 @@ namespace ConsoleAppB5P2
 
             FillQueue(purchases, size);
 
-            CalculationSum(purchases);
+            ServePurchase(purchases);
 
             Console.ReadKey();
         }
@@ -28,7 +28,7 @@ namespace ConsoleAppB5P2
                 purchases.Enqueue(random.Next(minRandom, maxRandom));
         }
 
-        private static void CalculationSum(Queue<int> purchases)
+        private static void ServePurchase(Queue<int> purchases)
         {
             int sum = 0;
 
