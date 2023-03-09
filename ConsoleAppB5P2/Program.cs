@@ -8,13 +8,12 @@ namespace ConsoleAppB5P2
         {
             int size = 9;
 
-            Queue<int> purchases = new Queue<int>();
+            Queue<int> purchases = new();
 
             FillQueue(purchases, size);
 
-            int revenue = GetCalculationRevenue(purchases);
+            CalculationSum(purchases);
 
-            Console.WriteLine($"Все клиенты обслужены, выручка составила: {revenue}");
             Console.ReadKey();
         }
 
@@ -29,22 +28,25 @@ namespace ConsoleAppB5P2
                 purchases.Enqueue(random.Next(minRandom, maxRandom));
         }
 
-        private static int GetCalculationRevenue(Queue<int> purchases)
+        private static void CalculationSum(Queue<int> purchases)
         {
             int sum = 0;
 
-            foreach (int purchase in purchases)
+            while (purchases.Count > 0)
             {
+                int purchase = purchases.Dequeue();
+                Console.WriteLine($"Сумма по чеку: {purchase}");
+
                 sum += purchase;
-                PrintPurcase(purchase, sum);
+                PrintSum(sum);
             }
 
-            return sum;
+            Console.WriteLine($"Все клиенты обслужены, выручка составила: {sum}");
         }
 
-        private static void PrintPurcase(int purchase, int sum)
+        private static void PrintSum(int sum)
         {
-            Console.WriteLine($"Сумма по чеку: {purchase}\nТекущая выручка: {sum}");
+            Console.WriteLine($"Текущая выручка: {sum}\nСледующий!");
             Console.ReadKey();
             Console.Clear();
         }
